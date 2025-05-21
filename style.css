@@ -1,0 +1,53 @@
+
+body {
+  background: url("asssets/WhatsApp\ Image\ 2025-05-16\ at\ 8.05.01\ PM\ \(1\).jpeg");
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+}
+
+h2, h3, h4, h5 {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+
+
+
+.level-card {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.level-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.level-card.border-primary {
+  border: 3px solid #ff9e00;
+}
+
+input[type="text"] {
+  border-radius: 8px;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+
+button.btn {
+  background-color: #ff9e00;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+  background-color: #e98d00;
+}
