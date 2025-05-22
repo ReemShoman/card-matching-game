@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const audio = new Audio("audio/sea sound.mp3"); 
   audio.loop = true;
 
-  const savedTime = parseFloat(localStorage.getItem("audioTime")) || 0;
+  const savedTime = parseFloat(localStorage.getItem("audioTime")) ; 
   const isPlaying = localStorage.getItem("audioPlaying") === "true";
 
   audio.currentTime = savedTime;
