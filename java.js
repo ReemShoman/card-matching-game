@@ -157,13 +157,38 @@ back.textContent = symbol;
     return `${mins}:${secs}`;
   }
 
-  function endGame() {
-    clearInterval(timer);
-    gameStarted = false;
-    finalMoves.textContent = moves;
-    finalTime.textContent = formatTime(seconds);
-    winMessage.classList.remove('d-none');
-  }
+  // Replace the endGame function in java.js with this:
+function endGame() {
+  clearInterval(timer);
+  gameStarted = false;
+  finalMoves.textContent = moves;
+  finalTime.textContent = formatTime(seconds);
+  winMessage.classList.remove('d-none');
+
+  // Create popup overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'overlay';
+  
+  // Create popup element
+  const popup = document.createElement('div');
+  popup.className = 'win-popup';
+  popup.innerHTML = `
+    <h2>🎉 Congratulations! 🎉</h2>
+    <p>You completed the game in ${moves} moves and ${formatTime(seconds)}!</p>
+    <p>Well done, ${playerName}!</p>
+    <button id="close-popup">OK</button>
+  `;
+  
+  // Add elements to the body
+  document.body.appendChild(overlay);
+  document.body.appendChild(popup);
+  
+  // Add event listener to close button
+  document.getElementById('close-popup').addEventListener('click', () => {
+    document.body.removeChild(overlay);
+    document.body.removeChild(popup);
+  });
+}
 
   function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
